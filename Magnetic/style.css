@@ -12,3 +12,19 @@ body{
     overflow: hidden;
     cursor: none;
 }
+.custom-cursor{
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255,255,255,0.8);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.3s,height 0.3s,background-color 0.3s;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
