@@ -1,44 +1,56 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background-color: #0b0b0b;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    cursor: none;
+
+body {
+  background-color: #0b0b0b;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* Hide the default system cursor */
+  cursor: none; 
 }
-.custom-cursor{
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgba(255,255,255,0.8);
-    border-radius: 50%;
-    position: fixed;
-    transform: translate(-50%,-50%);
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.3s,height 0.3s,background-color 0.3s;
+
+/* Custom Cursor Design */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Crucial: stops the cursor from blocking clicks */
+  z-index: 9999;
+  /* Smoothly interpolates the default movement tracking */
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
 }
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+/* Layout Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.magnetic-btn{
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 24px 48px;
-    border-radius: 40px;
-    position: relative;
-    cursor: none;
-    display: inline-block;
-    transform: translate(calc(var(--x,0)*1px),calc(var(--y,0)*1px));
-    transition: transform 0.2s cubic-bezier(0.25,1,0.5,1),border-color 0.3s;
+
+/* Premium Magnetic Button Styling */
+.magnetic-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 24px 48px;
+  border-radius: 40px;
+  position: relative;
+  cursor: none;
+  display: inline-block;
+  /* JS will feed real-time values into these transforms */
+  transform: translate(calc(var(--x, 0) * 1px), calc(var(--y, 0) * 1px));
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s;
 }
+
 .btn-text {
   display: block;
   color: #ffffff;
